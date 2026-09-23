@@ -17,6 +17,10 @@ import {
   Monitor,
   Download,
   FileText,
+  Lock,
+  LogOut,
+  Sun,
+  Moon,
 } from 'lucide-react';
 
 export const AdminHeader: React.FC = () => {
@@ -27,6 +31,8 @@ export const AdminHeader: React.FC = () => {
     markNotificationRead,
     activeTabMode,
     setActiveTabMode,
+    erpTheme,
+    toggleErpTheme,
   } = useErp();
 
   const [notifDropdownOpen, setNotifDropdownOpen] = useState(false);
@@ -109,13 +115,25 @@ export const AdminHeader: React.FC = () => {
             <Layers className="w-3.5 h-3.5" />
             <span>Dual Split</span>
           </button>
+          <button
+            onClick={() => setActiveTabMode('auth')}
+            className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg transition-all ${
+              activeTabMode === 'auth'
+                ? 'neu-segment-active font-bold text-orange-500'
+                : 'text-slate-400 hover:text-orange-400'
+            }`}
+            title="3D Neumorphic Kirish / Sign Up darchasini ochish"
+          >
+            <Lock className="w-3.5 h-3.5 text-orange-500" />
+            <span>Kirish (3D)</span>
+          </button>
         </div>
 
         {/* Mobile-only Quick Switcher to Admin Mobile */}
         <div className="flex md:hidden items-center space-x-1">
           <button
             onClick={() => setActiveTabMode('admin-mobile')}
-            className="flex items-center space-x-1 px-2.5 py-1.5 rounded-lg neu-btn text-emerald-400 text-[11px] font-bold"
+            className="flex items-center space-x-1 px-2.5 py-1.5 rounded-lg neu-btn text-orange-400 text-[11px] font-bold"
             title="Mobil ko'rinishga o'tish"
           >
             <Smartphone className="w-3.5 h-3.5" />
@@ -123,10 +141,10 @@ export const AdminHeader: React.FC = () => {
           </button>
         </div>
 
-        {/* Global Action: + Trade Profit (Luminous Emerald Neumorphic Button) */}
+        {/* Global Action: + Trade Profit (Luminous Orange Neumorphic Button) */}
         <button
           onClick={() => openModal('trade-profit')}
-          className="flex items-center space-x-1.5 px-3.5 py-1.5 rounded-xl neu-btn-emerald text-slate-950 text-xs font-bold transition-all active:scale-95"
+          className="flex items-center space-x-1.5 px-3.5 py-1.5 rounded-xl neu-btn-orange text-white text-xs font-bold transition-all active:scale-95 shadow-md"
         >
           <DollarSign className="w-3.5 h-3.5 stroke-[2.5]" />
           <span className="hidden sm:inline">+ Daromad Taqsimlash</span>
@@ -138,7 +156,7 @@ export const AdminHeader: React.FC = () => {
           onClick={() => openModal('new-investor')}
           className="hidden sm:flex items-center space-x-1.5 px-3.5 py-1.5 rounded-xl neu-btn text-slate-200 text-xs font-semibold hover:text-white active:scale-95 transition-all"
         >
-          <UserPlus className="w-3.5 h-3.5 text-emerald-400" />
+          <UserPlus className="w-3.5 h-3.5 text-orange-400" />
           <span>+ Investor</span>
         </button>
 
@@ -202,6 +220,38 @@ export const AdminHeader: React.FC = () => {
             </div>
           )}
         </div>
+
+        {/* Neumorphic Theme Mode Switcher (Klassik Och #e8e8e8 vs Tungi Qora) */}
+        <button
+          onClick={toggleErpTheme}
+          title={erpTheme === 'light' ? "Tungi Neumorphic rejimiga o'tish" : "Klassik Oqimtir Neumorphic (#e8e8e8) rejimiga o'tish"}
+          className="p-2 rounded-xl neu-btn text-slate-400 hover:text-amber-400 transition-colors active:scale-95 flex items-center space-x-1.5"
+        >
+          {erpTheme === 'light' ? (
+            <>
+              <Moon className="w-4 h-4 text-slate-700" />
+              <span className="hidden lg:inline text-xs font-semibold text-slate-700">Tungi</span>
+            </>
+          ) : (
+            <>
+              <Sun className="w-4 h-4 text-amber-400" />
+              <span className="hidden lg:inline text-xs font-semibold text-amber-400">Oqimtir</span>
+            </>
+          )}
+        </button>
+
+        {/* User Profile & Logout Button */}
+        <button
+          onClick={() => setActiveTabMode('auth')}
+          title="Tizimdan chiqish / 3D Neumorphic Kirish oynasiga qaytish"
+          className="flex items-center space-x-2 px-2.5 py-1.5 rounded-xl neu-btn text-slate-300 hover:text-white text-xs group active:scale-95 transition-all"
+        >
+          <div className="w-6 h-6 rounded-lg bg-orange-500/20 text-orange-500 border border-orange-500/30 flex items-center justify-center font-bold text-[10px]">
+            TI
+          </div>
+          <span className="hidden xl:inline text-xs font-medium text-slate-300">Tolib I.</span>
+          <LogOut className="w-3.5 h-3.5 text-slate-400 group-hover:text-orange-400 transition-colors" />
+        </button>
       </div>
     </header>
   );

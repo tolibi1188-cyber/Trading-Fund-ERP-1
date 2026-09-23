@@ -116,15 +116,15 @@ export const AdminSidebar: React.FC = () => {
         {/* Brand Header */}
         <div className="p-4 border-b border-white/[0.06] bg-[#0e141f]">
           <div className="flex items-center space-x-3">
-            <div className="w-9 h-9 rounded-xl neu-btn-emerald flex items-center justify-center">
-              <span className="font-mono font-black text-slate-950 text-sm">TF</span>
+            <div className="w-9 h-9 rounded-xl neu-btn-orange flex items-center justify-center">
+              <span className="font-mono font-black text-white text-sm">TF</span>
             </div>
             <div>
               <h1 className="font-bold text-sm text-white tracking-tight leading-none flex items-center space-x-1.5">
                 <span>Trading Fund ERP</span>
               </h1>
-              <div className="text-[10px] font-mono text-emerald-400 mt-1 flex items-center space-x-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_#10b981] animate-pulse" />
+              <div className="text-[10px] font-mono text-orange-400 mt-1 flex items-center space-x-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-orange-500 shadow-[0_0_6px_#f97316] animate-pulse" />
                 <span>v2.6.4 • Neumorphic</span>
               </div>
             </div>
@@ -138,7 +138,7 @@ export const AdminSidebar: React.FC = () => {
             className="w-full flex items-center justify-between px-3 py-2.5 rounded-xl neu-inset text-xs text-slate-400 hover:text-slate-200 transition-all group"
           >
             <span className="flex items-center space-x-2">
-              <Command className="w-3.5 h-3.5 text-slate-400 group-hover:text-emerald-400 transition-colors" />
+              <Command className="w-3.5 h-3.5 text-slate-400 group-hover:text-orange-400 transition-colors" />
               <span>Tezkor qidiruv...</span>
             </span>
             <kbd className="font-mono text-[10px] px-1.5 py-0.5 rounded bg-black/40 border border-white/10 text-slate-400 shadow-inner">
@@ -165,12 +165,12 @@ export const AdminSidebar: React.FC = () => {
                 }}
                 className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-medium transition-all ${
                   isActive
-                    ? 'neu-segment-active font-semibold shadow-[0_0_12px_rgba(16,185,129,0.15)]'
+                    ? 'neu-segment-active font-semibold shadow-[0_0_14px_rgba(249,115,22,0.25)]'
                     : 'text-slate-400 hover:text-slate-200 hover:bg-white/[0.03] neu-card-hover'
                 }`}
               >
                 <div className="flex items-center space-x-2.5 truncate">
-                  <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-emerald-400' : 'text-slate-400'}`} />
+                  <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-orange-400' : 'text-slate-400'}`} />
                   <span className="truncate">{item.label}</span>
                 </div>
                 {item.badge && (
@@ -188,7 +188,7 @@ export const AdminSidebar: React.FC = () => {
       <div className="p-3 border-t border-white/[0.06] bg-[#0c111a] space-y-2">
         <div className="text-[10px] font-mono text-slate-400 uppercase font-semibold px-2 flex items-center justify-between">
           <span>Mobil Ilovalar</span>
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_#10b981] animate-pulse" />
+          <span className="w-1.5 h-1.5 rounded-full bg-orange-500 shadow-[0_0_6px_#f97316] animate-pulse" />
         </div>
 
         {/* Primary Admin Mobile Button */}
@@ -196,12 +196,12 @@ export const AdminSidebar: React.FC = () => {
           onClick={() => setActiveTabMode('admin-mobile')}
           className={`w-full flex items-center justify-center space-x-2 py-2 px-3 rounded-xl text-xs font-bold transition-all active:scale-95 ${
             activeTabMode === 'admin-mobile'
-              ? 'neu-segment-active text-emerald-400'
-              : 'neu-btn text-emerald-400'
+              ? 'neu-segment-active text-orange-400'
+              : 'neu-btn text-orange-400'
           }`}
           title="Ko'chada bo'lganda ishlatish uchun Admin Mobil Ilovasi"
         >
-          <Smartphone className="w-4 h-4 text-emerald-400" />
+          <Smartphone className="w-4 h-4 text-orange-400" />
           <span>Admin Mobil (Ko‘chada)</span>
         </button>
 

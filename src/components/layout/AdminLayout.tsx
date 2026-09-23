@@ -54,7 +54,7 @@ export const AdminLayout: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen w-screen bg-[#0D1117] text-slate-100 overflow-hidden select-none">
+    <div className="flex flex-col h-screen w-screen overflow-hidden select-none">
       {/* 1. Top Real-time Market Ticker */}
       <MarketTicker />
 
@@ -64,7 +64,7 @@ export const AdminLayout: React.FC = () => {
         <AdminSidebar />
 
         {/* Main Content Area */}
-        <main className="flex-1 flex flex-col overflow-hidden bg-[#0D1117]/95">
+        <main className="flex-1 flex flex-col overflow-hidden">
           {/* Sticky Header */}
           <AdminHeader />
 

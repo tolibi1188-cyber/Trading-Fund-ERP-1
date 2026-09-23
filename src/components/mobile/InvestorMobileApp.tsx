@@ -32,6 +32,9 @@ import {
   CreditCard,
   Sparkles,
   Coins,
+  LogOut,
+  Sun,
+  Moon,
 } from 'lucide-react';
 
 interface InvestorMobileAppProps {
@@ -50,6 +53,9 @@ export const InvestorMobileApp: React.FC<InvestorMobileAppProps> = ({ onBackToDe
     requestWithdrawal,
     setSelectedReceiptForModal,
     addToast,
+    setActiveTabMode,
+    erpTheme,
+    toggleErpTheme,
   } = useErp();
 
   // Active investor
@@ -168,14 +174,25 @@ export const InvestorMobileApp: React.FC<InvestorMobileAppProps> = ({ onBackToDe
           </select>
         </div>
 
-        {onBackToDesktop && (
+        <div className="flex items-center space-x-2">
+          {/* Theme Switcher Toggle */}
           <button
-            onClick={onBackToDesktop}
-            className="text-xs text-slate-400 hover:text-white px-2 py-1 rounded-lg bg-white/5"
+            onClick={toggleErpTheme}
+            title={erpTheme === 'light' ? "Tungi rejimga o'tish" : "Klassik Oqimtir Neumorphic rejimiga o'tish"}
+            className="w-7 h-7 rounded-lg neu-btn flex items-center justify-center text-slate-400 hover:text-amber-400 transition-colors"
           >
-            Desktop ERP
+            {erpTheme === 'light' ? <Moon className="w-3.5 h-3.5 text-slate-700" /> : <Sun className="w-3.5 h-3.5 text-amber-400" />}
           </button>
-        )}
+
+          {onBackToDesktop && (
+            <button
+              onClick={onBackToDesktop}
+              className="text-xs text-slate-400 hover:text-white px-2.5 py-1 rounded-lg neu-btn"
+            >
+              Desktop ERP
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Realistic Mobile Device Frame (iPhone 16 Pro mockup) */}
@@ -318,7 +335,7 @@ export const InvestorMobileApp: React.FC<InvestorMobileAppProps> = ({ onBackToDe
               </h2>
             </div>
 
-            <div className="text-right">
+            <div className="flex items-center space-x-1.5">
               <span
                 className={`text-[10px] font-mono font-bold px-2 py-0.5 rounded-full border ${
                   isOld
@@ -328,6 +345,20 @@ export const InvestorMobileApp: React.FC<InvestorMobileAppProps> = ({ onBackToDe
               >
                 {currentInvestor.type} INVESTOR
               </span>
+              <button
+                onClick={toggleErpTheme}
+                title={erpTheme === 'light' ? "Tungi rejimga o'tish" : "Oqimtir Neumorphic rejimiga o'tish"}
+                className="w-7 h-7 rounded-lg neu-btn flex items-center justify-center text-slate-400 hover:text-amber-400 transition-colors"
+              >
+                {erpTheme === 'light' ? <Moon className="w-3.5 h-3.5 text-slate-700" /> : <Sun className="w-3.5 h-3.5 text-amber-400" />}
+              </button>
+              <button
+                onClick={() => setActiveTabMode('auth')}
+                title="Kirish / Chiqish oynasi"
+                className="w-7 h-7 rounded-lg neu-btn flex items-center justify-center text-slate-400 hover:text-orange-400 transition-colors"
+              >
+                <LogOut className="w-3.5 h-3.5" />
+              </button>
             </div>
           </div>
 

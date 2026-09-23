@@ -11,6 +11,7 @@ import { AdminMobileApp } from './components/mobile/AdminMobileApp';
 import { InvestorMobileApp } from './components/mobile/InvestorMobileApp';
 import { CommandPalette } from './components/common/CommandPalette';
 import { ToastContainer } from './components/common/ToastContainer';
+import { NeumorphicAuthScreen } from './components/auth/NeumorphicAuthScreen';
 
 // Modals
 import { OfficialChekModal } from './components/receipt/OfficialChekModal';
@@ -31,6 +32,7 @@ const ErpAppContent: React.FC = () => {
     selectedReceiptForModal,
     setSelectedReceiptForModal,
     investors,
+    erpTheme,
   } = useErp();
 
   // Auto-switch to Admin Mobile if loaded on smartphone screen (< 768px)
@@ -47,8 +49,20 @@ const ErpAppContent: React.FC = () => {
       : null;
 
   return (
-    <div className="w-screen h-screen overflow-hidden bg-[#0D1117] text-slate-100 flex flex-col font-sans">
-      {/* View Router based on activeTabMode: 'admin' | 'admin-mobile' | 'mobile' | 'split' */}
+    <div className={`w-screen h-screen overflow-hidden ${erpTheme === 'light' ? 'theme-light bg-[#e8e8e8] text-[#2d3748]' : 'theme-dark bg-[#0D1117] text-slate-100'} flex flex-col font-sans transition-colors duration-200`}>
+      {/* View Router based on activeTabMode: 'admin' | 'admin-mobile' | 'mobile' | 'split' | 'auth' */}
+      {activeTabMode === 'auth' && (
+        <NeumorphicAuthScreen
+          onSuccessLogin={(role) => {
+            if (role === 'investor') {
+              setActiveTabMode('mobile');
+            } else {
+              setActiveTabMode('admin');
+            }
+          }}
+        />
+      )}
+
       {activeTabMode === 'admin' && <AdminLayout />}
 
       {activeTabMode === 'admin-mobile' && (

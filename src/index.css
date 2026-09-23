@@ -95,7 +95,27 @@ body {
   transform: translateY(1px);
 }
 
-/* 4. Neumorphic Emerald Luminous Button (Primary Action) */
+/* 4. Neumorphic Orange Luminous Button (Primary Action) */
+.neu-btn-orange {
+  background: linear-gradient(145deg, #ff7a00, #ea580c) !important;
+  box-shadow: 4px 4px 12px rgba(234, 88, 12, 0.45), -3px -3px 9px rgba(255, 122, 0, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  color: #ffffff !important;
+  transition: all 0.15s ease;
+}
+
+.neu-btn-orange:hover {
+  background: linear-gradient(145deg, #fb923c, #ea580c) !important;
+  box-shadow: 6px 6px 18px rgba(234, 88, 12, 0.6), -4px -4px 12px rgba(251, 146, 60, 0.35) !important;
+  color: #ffffff !important;
+}
+
+.neu-btn-orange:active {
+  box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.5), inset -2px -2px 6px rgba(255, 255, 255, 0.2) !important;
+  transform: translateY(1px);
+}
+
+/* 4b. Neumorphic Emerald Button (Secondary positive) */
 .neu-btn-emerald {
   background: linear-gradient(145deg, #10b981, #059669);
   box-shadow: 4px 4px 12px rgba(5, 150, 105, 0.35), -3px -3px 9px rgba(16, 185, 129, 0.2);
@@ -116,9 +136,9 @@ body {
 /* 5. Tactile Navigation Pill/Segment */
 .neu-segment-active {
   background: #0b0f16;
-  box-shadow: inset 2px 2px 5px #05070a, inset -2px -2px 5px rgba(255, 255, 255, 0.04);
-  color: #34d399;
-  border: 1px solid rgba(52, 211, 153, 0.25);
+  box-shadow: inset 2px 2px 5px #05070a, inset -2px -2px 5px rgba(255, 255, 255, 0.04), 0 0 12px rgba(249, 115, 22, 0.2);
+  color: #ff7a00 !important;
+  border: 1px solid rgba(249, 115, 22, 0.4) !important;
 }
 
 /* 6. Neumorphic Progress Track */
@@ -161,6 +181,233 @@ body {
   box-shadow: 12px 12px 30px #04060a, -6px -6px 20px rgba(255, 255, 255, 0.04);
 }
 
+/* ==========================================================================
+   LIGHT NEUMORPHIC THEME SPECIFICATION (#e8e8e8 - MATCHING 3D LOGIN STYLE)
+   ========================================================================== */
+
+.theme-light {
+  background-color: #e8e8e8 !important;
+  color: #2d3748 !important;
+}
+
+/* Light Surfaces & Cards */
+.theme-light .neu-card {
+  background: #e8e8e8 !important;
+  box-shadow: -8px -8px 18px #ffffff, 8px 8px 18px #c8c8c8 !important;
+  border: 1px solid rgba(255, 255, 255, 0.75) !important;
+  color: #2d3748 !important;
+}
+
+.theme-light .neu-card-hover:hover {
+  box-shadow: -10px -10px 22px #ffffff, 10px 10px 22px #bebebe !important;
+  border-color: rgba(161, 15, 15, 0.3) !important;
+}
+
+.theme-light .neu-flat {
+  background: #e8e8e8 !important;
+  box-shadow: -5px -5px 12px #ffffff, 5px 5px 12px #c8c8c8 !important;
+  border: 1px solid rgba(255, 255, 255, 0.75) !important;
+  color: #2d3748 !important;
+}
+
+/* Light Inset Wells & Fields */
+.theme-light .neu-inset {
+  background: #e8e8e8 !important;
+  box-shadow: inset 4px 4px 8px rgba(184, 190, 204, 0.5), inset -4px -4px 8px rgba(255, 255, 255, 0.95) !important;
+  border: none !important;
+  color: #2d3748 !important;
+}
+
+.theme-light .neu-sunken-well {
+  background: #dedede !important;
+  box-shadow: inset 5px 5px 10px rgba(180, 185, 195, 0.55), inset -5px -5px 10px rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Light Tactile Buttons */
+.theme-light .neu-btn {
+  background: #e8e8e8 !important;
+  box-shadow: -5px -5px 10px #ffffff, 5px 5px 10px #c5c5c5 !important;
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+  color: #4a4a4a !important;
+}
+
+.theme-light .neu-btn:hover {
+  background: #ededed !important;
+  box-shadow: -7px -7px 14px #ffffff, 7px 7px 14px #bebebe !important;
+  color: #1e293b !important;
+}
+
+.theme-light .neu-btn:active,
+.theme-light .neu-btn-active {
+  background: #e2e2e2 !important;
+  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.16), inset -3px -3px 6px rgba(255, 255, 255, 0.85) !important;
+  color: #a10f0f !important;
+}
+
+/* Active Segment in Light Mode */
+.theme-light .neu-segment-active {
+  background: #e8e8e8 !important;
+  box-shadow: inset 3px 3px 6px rgba(184, 190, 204, 0.6), inset -3px -3px 6px rgba(255, 255, 255, 0.95) !important;
+  color: #ea580c !important;
+  border: 1px solid rgba(249, 115, 22, 0.4) !important;
+}
+
+/* Primary Orange Sheen Action Button */
+.neu-btn-crimson,
+.neu-btn-orange,
+.theme-light .neu-btn-crimson,
+.theme-light .neu-btn-orange,
+.theme-light .neu-btn-primary {
+  position: relative;
+  overflow: hidden;
+  background: #e8e8e8 !important;
+  color: #737373 !important;
+  box-shadow: -6px -6px 12px #ffffff, 6px 6px 12px #c8c8c8 !important;
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+  transition: all .35s ease;
+}
+
+.neu-btn-crimson:hover,
+.neu-btn-orange:hover,
+.theme-light .neu-btn-crimson:hover,
+.theme-light .neu-btn-orange:hover,
+.theme-light .neu-btn-primary:hover {
+  color: #ffffff !important;
+  background: linear-gradient(155deg, #ff7a00 0%, #c2410c 100%) !important;
+  box-shadow: 0 10px 22px rgba(234, 88, 12, 0.45), -4px -4px 10px rgba(255, 255, 255, 0.7) !important;
+  transform: translateY(-1px);
+}
+
+.theme-dark .neu-btn-orange {
+  background: linear-gradient(145deg, #ff7a00, #ea580c) !important;
+  box-shadow: 4px 4px 14px rgba(234, 88, 12, 0.45), -2px -2px 8px rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+}
+
+.theme-dark .neu-btn-orange:hover {
+  background: linear-gradient(145deg, #fb923c, #ea580c) !important;
+  box-shadow: 6px 6px 18px rgba(234, 88, 12, 0.6), -3px -3px 10px rgba(255, 255, 255, 0.1) !important;
+}
+
+.theme-light .neu-btn-emerald {
+  background: linear-gradient(145deg, #10b981, #059669) !important;
+  box-shadow: -3px -3px 8px rgba(255, 255, 255, 0.85), 4px 4px 12px rgba(5, 150, 105, 0.35) !important;
+  color: #ffffff !important;
+}
+
+/* Light Progress Track & Divider */
+.theme-light .neu-progress-track {
+  background: #dedede !important;
+  box-shadow: inset 2px 2px 5px rgba(184, 190, 204, 0.6), inset -2px -2px 5px rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+.theme-light .neu-divider {
+  background: #d8d8d8 !important;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Light Glass panels & dropdowns */
+.theme-light .glass-panel,
+.theme-light .glass-card,
+.theme-light .glass-dropdown {
+  background: rgba(232, 232, 232, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  box-shadow: -8px -8px 20px #ffffff, 8px 8px 20px #c5c5c5 !important;
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+  color: #2d3748 !important;
+}
+
+/* Light Global Containers & Text Overrides */
+.theme-light #admin-header,
+.theme-light #admin-sidebar,
+.theme-light #market-ticker-bar,
+.theme-light #status-bar {
+  background-color: #e8e8e8 !important;
+  border-color: rgba(184, 190, 204, 0.45) !important;
+  color: #2d3748 !important;
+}
+
+.theme-light header,
+.theme-light aside,
+.theme-light nav {
+  background-color: #e8e8e8 !important;
+}
+
+.theme-light .bg-\[\#0D1117\],
+.theme-light .bg-\[\#0b0f16\],
+.theme-light .bg-\[\#0e141f\],
+.theme-light .bg-\[\#101622\],
+.theme-light .bg-\[\#121824\],
+.theme-light .bg-\[\#131B28\],
+.theme-light .bg-\[\#161B22\],
+.theme-light .bg-\[\#07090D\] {
+  background-color: #e8e8e8 !important;
+}
+
+.theme-light .text-white,
+.theme-light .text-slate-100 {
+  color: #1e293b !important;
+}
+
+.theme-light .text-slate-200 {
+  color: #334155 !important;
+}
+
+.theme-light .text-slate-300 {
+  color: #475569 !important;
+}
+
+.theme-light .text-slate-400 {
+  color: #64748b !important;
+}
+
+.theme-light .text-slate-500 {
+  color: #94a3b8 !important;
+}
+
+.theme-light .border-white\/10,
+.theme-light .border-white\/\[0\.06\],
+.theme-light .border-white\/5,
+.theme-light .border-white\/15,
+.theme-light .border-white\/20 {
+  border-color: rgba(184, 190, 204, 0.4) !important;
+}
+
+.theme-light .bg-white\/\[0\.02\],
+.theme-light .bg-white\/\[0\.03\],
+.theme-light .bg-white\/5,
+.theme-light .bg-white\/10 {
+  background-color: rgba(0, 0, 0, 0.03) !important;
+}
+
+/* Mobile Phone Mockup in Light Neumorphic Style */
+.theme-light #mobile-phone-mockup {
+  background-color: #e8e8e8 !important;
+  border-color: #d1d5db !important;
+  box-shadow: -18px -18px 40px #ffffff, 20px 20px 45px #b0b8c6 !important;
+  color: #2d3748 !important;
+}
+
+.theme-light #mobile-phone-mockup .dynamic-island,
+.theme-light #mobile-phone-mockup div[class*="rounded-full flex items-center justify-center"] {
+  background: #dedede !important;
+  border-color: rgba(255, 255, 255, 0.8) !important;
+  box-shadow: inset 2px 2px 4px rgba(0,0,0,0.1) !important;
+}
+
+/* Light Scrollbar */
+.theme-light ::-webkit-scrollbar-track {
+  background: #e8e8e8 !important;
+}
+
+.theme-light ::-webkit-scrollbar-thumb {
+  background: #c8cbd2 !important;
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+}
+
 /* 1C Enterprise Dense Scrollbars */
 ::-webkit-scrollbar {
   width: 6px;
@@ -200,4 +447,474 @@ body {
     display: none !important;
   }
 }
+
+/* ==========================================================================
+   PREMIUM NEUMORPHIC CIRCULAR 3D FLIP LOGIN & SIGN UP SYSTEM
+   ========================================================================== */
+
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: #e8e8e8;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.4s ease;
+}
+
+.login-wrapper.theme-dark {
+  background: #0d121b;
+}
+
+/* =========================
+   FLIP PERSPECTIVE
+========================= */
+
+.flip-scene {
+  width: 520px;
+  height: 520px;
+  perspective: 1800px;
+}
+
+.flip-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform .9s cubic-bezier(.22,1,.36,1);
+  transform-style: preserve-3d;
+}
+
+.flip-scene.flipped .flip-card {
+  transform: rotateY(180deg);
+}
+
+/* =========================
+   NEUMORPHIC CIRCLE (both faces)
+========================= */
+
+.glass-circle {
+  position: absolute;
+  inset: 0;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e8e8e8;
+  box-shadow:
+    -22px -22px 44px #ffffff,
+    22px 22px 50px #c3c3c3,
+    -1px -1px 1px rgba(255,255,255,.5) inset;
+  z-index: 5;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+.login-wrapper.theme-dark .glass-circle {
+  background: #111723;
+  box-shadow:
+    -18px -18px 36px rgba(255, 255, 255, 0.03),
+    20px 20px 45px #070a10,
+    -1px -1px 1px rgba(255, 255, 255, 0.08) inset;
+}
+
+.glass-circle.back {
+  transform: rotateY(180deg);
+}
+
+/* =========================
+   INNER RING & ACCENT RING
+========================= */
+
+.glass-circle::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow:
+    inset 3px 3px 9px rgba(163, 163, 163, 0.18),
+    inset -3px -3px 9px rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+}
+
+.login-wrapper.theme-dark .glass-circle::before {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    inset 3px 3px 9px rgba(0, 0, 0, 0.6),
+    inset -3px -3px 9px rgba(255, 255, 255, 0.03);
+}
+
+.accent-ring {
+  position: absolute;
+  inset: 18px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(249, 115, 22, 0.55);
+  box-shadow: 
+    0 0 16px rgba(249, 115, 22, 0.25),
+    inset 0 0 12px rgba(249, 115, 22, 0.15);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.login-wrapper.theme-dark .accent-ring {
+  border: 1.5px solid rgba(249, 115, 22, 0.45);
+  box-shadow: 
+    0 0 20px rgba(249, 115, 22, 0.3),
+    inset 0 0 16px rgba(249, 115, 22, 0.2);
+}
+
+/* =========================
+   LOGIN / SIGNUP FORM
+========================= */
+
+.login-form {
+  position: relative;
+  width: 290px;
+  z-index: 10;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.login-form h1 {
+  color: #4a4a4a;
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  margin-bottom: 4px;
+  text-align: center;
+  text-shadow:
+    1px 1px 1px rgba(255, 255, 255, 0.9),
+    -2px -2px 1px rgba(163, 163, 163, 0.25);
+  transition: color 0.3s ease;
+}
+
+.login-wrapper.theme-dark .login-form h1 {
+  color: #f1f5f9;
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.6),
+    0 -1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.login-form .subtitle {
+  text-align: center;
+  color: #9a9a9a;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .3px;
+  margin-bottom: 24px;
+}
+
+.login-wrapper.theme-dark .login-form .subtitle {
+  color: #8b9bb4;
+}
+
+/* =========================
+   INPUT BOX
+========================= */
+
+.input-box {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.input-box i {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #909090;
+  font-size: 15px;
+  z-index: 2;
+  transition: color .35s ease;
+}
+
+.input-box input {
+  width: 100%;
+  height: 46px;
+  padding: 0 18px 0 45px;
+  border: none;
+  outline: none;
+  background: #e8e8e8;
+  color: #4a4a4a;
+  font-family: inherit;
+  font-size: 14.5px;
+  font-weight: 500;
+  letter-spacing: .2px;
+  border-radius: 12px;
+  box-shadow:
+    inset -6px -6px 10px rgba(255,255,255,.95),
+    inset 6px 6px 10px rgba(184,190,204,.45);
+  transition: box-shadow .4s cubic-bezier(.22,1,.36,1), transform .4s cubic-bezier(.22,1,.36,1), background .3s;
+}
+
+.login-wrapper.theme-dark .input-box input {
+  background: #0d121c;
+  color: #e2e8f0;
+  box-shadow:
+    inset -4px -4px 8px rgba(255, 255, 255, 0.03),
+    inset 4px 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.input-box input::placeholder {
+  color: #a3a3a3;
+  font-weight: 400;
+}
+
+.login-wrapper.theme-dark .input-box input::placeholder {
+  color: #62728d;
+}
+
+/* FOCUS */
+.input-box input:focus {
+  transform: translateY(-2px);
+  box-shadow:
+    inset 3px 3px 6px rgba(234, 88, 12, 0.35),
+    inset -3px -3px 6px rgba(251, 146, 60, 0.3);
+}
+
+.login-wrapper.theme-dark .input-box input:focus {
+  box-shadow:
+    inset 3px 3px 8px rgba(234, 88, 12, 0.45),
+    inset -2px -2px 6px rgba(249, 115, 22, 0.25);
+}
+
+.input-box input:focus + i,
+.input-box:focus-within i {
+  color: #ea580c;
+}
+
+.login-wrapper.theme-dark .input-box input:focus + i,
+.login-wrapper.theme-dark .input-box:focus-within i {
+  color: #f97316;
+}
+
+/* =========================
+   FORGOT / REMEMBER
+========================= */
+
+.forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -1px;
+  margin-bottom: 24px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: #929191;
+}
+
+.login-wrapper.theme-dark .remember {
+  color: #94a3b8;
+}
+
+/* tiny neumorphic toggle */
+.switch {
+  position: relative;
+  width: 32px;
+  height: 18px;
+  border-radius: 20px;
+  background: #e8e8e8;
+  box-shadow:
+    inset 3px 3px 6px rgba(184,190,204,.5),
+    inset -3px -3px 6px rgba(255,255,255,.9);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all .25s ease;
+}
+
+.login-wrapper.theme-dark .switch {
+  background: #090e16;
+  box-shadow:
+    inset 2px 2px 5px rgba(0, 0, 0, 0.8),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.04);
+}
+
+.switch::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #e8e8e8;
+  box-shadow: 1px 1px 3px rgba(0,0,0,.25);
+  transition: left .25s ease, background .25s ease;
+}
+
+.login-wrapper.theme-dark .switch::after {
+  background: #1e293b;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.switch.on {
+  box-shadow:
+    inset 3px 3px 6px rgba(234, 88, 12, 0.45),
+    inset -3px -3px 6px rgba(251, 146, 60, 0.35);
+}
+
+.switch.on::after {
+  left: 16px;
+  background: linear-gradient(135deg, #ff7a00, #ea580c);
+  box-shadow: 0 0 8px rgba(234, 88, 12, 0.5);
+}
+
+.forgot a {
+  font-size: 12px;
+  color: #929191;
+  text-decoration: none;
+  transition: color .3s ease;
+  cursor: pointer;
+}
+
+.forgot a:hover {
+  color: #ea580c;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.login-form button {
+  position: relative;
+  width: 290px;
+  height: 42px;
+  display: block;
+  margin: auto;
+  overflow: hidden;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14.5px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #737373;
+  background: #e8e8e8;
+  box-shadow:
+    -7px -7px 12px #f8f8f8,
+     7px 7px 12px #c8c8c8;
+  transition: color .4s ease, background .4s ease, box-shadow .4s ease, transform .25s ease;
+}
+
+.login-wrapper.theme-dark .login-form button {
+  color: #94a3b8;
+  background: #141b27;
+  box-shadow:
+    -4px -4px 10px rgba(255, 255, 255, 0.03),
+     5px 5px 12px #07090f;
+}
+
+/* sheen sweep */
+.login-form button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(115deg, transparent, rgba(255,255,255,.55), transparent);
+  transform: skewX(-20deg);
+  transition: left .6s ease;
+}
+
+.login-form button:hover::before {
+  left: 130%;
+}
+
+.login-form button:hover {
+  transform: translateY(-2px);
+  color: #ffffff;
+  background: linear-gradient(155deg, #ff7a00 0%, #c2410c 100%);
+  box-shadow:
+    0 10px 22px rgba(234, 88, 12, 0.45),
+    -5px -5px 15px rgba(255, 255, 255, 0.6),
+    inset 0 1px 1px rgba(255,255,255,.25);
+}
+
+.login-wrapper.theme-dark .login-form button:hover {
+  background: linear-gradient(155deg, #ff7a00 0%, #ea580c 100%);
+  box-shadow:
+    0 10px 22px rgba(249, 115, 22, 0.5),
+    -3px -3px 10px rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+}
+
+.login-form button:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow:
+    inset 5px 5px 10px rgba(194, 65, 12, 0.45),
+    inset -5px -5px 10px rgba(255, 255, 255, 0.2);
+}
+
+.login-form .signup-text {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 12px;
+  color: #9a9a9a;
+}
+
+.login-wrapper.theme-dark .login-form .signup-text {
+  color: #8b9bb4;
+}
+
+.login-form .signup-text a {
+  color: #ea580c;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+.login-wrapper.theme-dark .login-form .signup-text a {
+  color: #f97316;
+}
+
+/* =========================
+   RESPONSIVE SCALING
+========================= */
+
+@media (max-width: 600px) {
+  .flip-scene { width: 390px; height: 390px; }
+  .glass-circle { width: 390px; height: 390px; }
+  .login-form { width: 220px; }
+  .login-form h1 { font-size: 32px; }
+  .login-form .subtitle { margin-bottom: 16px; font-size: 11px; }
+  .input-box { margin-bottom: 12px; }
+  .input-box input { height: 40px; font-size: 13px; padding-left: 38px; }
+  .input-box i { left: 14px; font-size: 13px; }
+  .forgot { margin-bottom: 18px; }
+  .forgot a { font-size: 10px; }
+  .login-form button { width: 215px; height: 40px; font-size: 13px; }
+}
+
+@media (max-width: 420px) {
+  .flip-scene { width: 330px; height: 330px; }
+  .glass-circle { width: 330px; height: 330px; }
+  .login-form { width: 185px; }
+  .login-form h1 { font-size: 26px; }
+  .login-form .subtitle { font-size: 10px; margin-bottom: 12px; }
+  .input-box { margin-bottom: 10px; }
+  .input-box input { height: 36px; font-size: 11px; padding-left: 32px; }
+  .input-box i { left: 10px; font-size: 11px; }
+  .forgot { margin-bottom: 14px; }
+  .forgot a { font-size: 8.5px; }
+  .login-form button { width: 180px; height: 36px; font-size: 11px; border-radius: 10px; }
+}
+
 

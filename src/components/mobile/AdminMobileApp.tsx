@@ -42,6 +42,9 @@ import {
   Settings,
   QrCode,
   FileCheck,
+  Sun,
+  Moon,
+  LogOut,
 } from 'lucide-react';
 
 interface AdminMobileAppProps {
@@ -68,6 +71,8 @@ export const AdminMobileApp: React.FC<AdminMobileAppProps> = ({ onBackToDesktop 
     addToast,
     exportLedgerCsv,
     exportInvestorsCsv,
+    erpTheme,
+    toggleErpTheme,
   } = useErp();
 
   // Bottom navigation tab: 'dashboard' | 'investors' | 'withdrawals' | 'ledger' | 'menu'
@@ -186,6 +191,15 @@ export const AdminMobileApp: React.FC<AdminMobileAppProps> = ({ onBackToDesktop 
               </button>
             </div>
 
+            {/* Theme Toggle */}
+            <button
+              onClick={toggleErpTheme}
+              title={erpTheme === 'light' ? "Tungi rejimga o'tish" : "Oqimtir Neumorphic rejimiga o'tish"}
+              className="p-2 rounded-xl neu-btn text-slate-300 active:scale-95 transition-all"
+            >
+              {erpTheme === 'light' ? <Moon className="w-4 h-4 text-slate-700" /> : <Sun className="w-4 h-4 text-amber-400" />}
+            </button>
+
             {/* Notification bell */}
             <button
               onClick={() => setShowNotifications(true)}
@@ -197,6 +211,15 @@ export const AdminMobileApp: React.FC<AdminMobileAppProps> = ({ onBackToDesktop 
                   {unreadNotificationsCount}
                 </span>
               )}
+            </button>
+
+            {/* Logout to 3D Auth */}
+            <button
+              onClick={() => setActiveTabMode('auth')}
+              title="Kirish oynasiga o'tish"
+              className="p-2 rounded-xl neu-btn text-slate-300 hover:text-orange-400 active:scale-95 transition-all"
+            >
+              <LogOut className="w-4 h-4" />
             </button>
           </div>
         </div>

@@ -163,8 +163,11 @@ interface ErpContextType {
   // Navigation & View State
   activeView: string;
   setActiveView: (view: string) => void;
-  activeTabMode: 'admin' | 'admin-mobile' | 'mobile' | 'split';
-  setActiveTabMode: (mode: 'admin' | 'admin-mobile' | 'mobile' | 'split') => void;
+  activeTabMode: 'admin' | 'admin-mobile' | 'mobile' | 'split' | 'auth';
+  setActiveTabMode: (mode: 'admin' | 'admin-mobile' | 'mobile' | 'split' | 'auth') => void;
+  erpTheme: 'light' | 'dark';
+  setErpTheme: (theme: 'light' | 'dark') => void;
+  toggleErpTheme: () => void;
   
   // Active Investor for Mobile App
   activeMobileInvestorId: string;
@@ -236,8 +239,39 @@ export const ErpProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
   // Layout View Controls
   const [activeView, setActiveView] = useState<string>('dashboard');
-  const [activeTabMode, setActiveTabMode] = useState<'admin' | 'admin-mobile' | 'mobile' | 'split'>('admin');
+  const [activeTabMode, setActiveTabMode] = useState<'admin' | 'admin-mobile' | 'mobile' | 'split' | 'auth'>('admin');
   const [activeMobileInvestorId, setActiveMobileInvestorId] = useState<string>('inv-001');
+
+  // Neumorphic Theme State (Defaults to 'light' for soft white/gray 3D tactile aesthetics)
+  const [erpTheme, setErpThemeState] = useState<'light' | 'dark'>(() => {
+    try {
+      const saved = localStorage.getItem('tf_erp_theme');
+      return saved === 'dark' ? 'dark' : 'light';
+    } catch {
+      return 'light';
+    }
+  });
+
+  const setErpTheme = useCallback((theme: 'light' | 'dark') => {
+    setErpThemeState(theme);
+    try {
+      localStorage.setItem('tf_erp_theme', theme);
+    } catch {
+      // ignore
+    }
+  }, []);
+
+  const toggleErpTheme = useCallback(() => {
+    setErpThemeState((prev) => {
+      const next = prev === 'light' ? 'dark' : 'light';
+      try {
+        localStorage.setItem('tf_erp_theme', next);
+      } catch {
+        // ignore
+      }
+      return next;
+    });
+  }, []);
 
   // Modals & Drawers
   const [selectedInvestorForDrawer, setSelectedInvestorForDrawer] = useState<Investor | null>(null);
@@ -1709,6 +1743,9 @@ export const ErpProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         exportLedgerCsv,
         exportInvestorsCsv,
         markNotificationRead,
+        erpTheme,
+        setErpTheme,
+        toggleErpTheme,
       }}
     >
       {children}
