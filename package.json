@@ -1,0 +1,75 @@
+{
+  "name": "react-example",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "vite --port=3000 --host=0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview",
+    "clean": "rm -rf dist release server.js",
+    "lint": "tsc --noEmit",
+    "electron:dev": "vite",
+    "electron:build": "vite build && electron-builder --win nsis",
+    "electron:portable": "vite build && electron-builder --win portable",
+    "dist": "vite build && electron-builder"
+  },
+  "buildConfig": {
+    "appId": "com.tradingfund.erp",
+    "productName": "Trading Fund ERP",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        },
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Trading Fund ERP"
+    }
+  },
+  "dependencies": {
+    "@google/genai": "^2.4.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "@vitejs/plugin-react": "^6.1.1",
+    "lucide-react": "^0.546.0",
+    "react": "^19.0.1",
+    "react-dom": "^19.0.1",
+    "vite": "^8.3.0",
+    "express": "^4.21.2",
+    "dotenv": "^17.2.3",
+    "motion": "^12.23.24"
+  },
+  "devDependencies": {
+    "@types/archiver": "^8.0.0",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.14.0",
+    "@types/pdfkit": "^0.17.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "archiver": "^8.0.0",
+    "autoprefixer": "^10.4.21",
+    "esbuild": "^0.25.0",
+    "pdfkit": "^0.20.2",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.21.0",
+    "typescript": "^7.0.2"
+  }
+}

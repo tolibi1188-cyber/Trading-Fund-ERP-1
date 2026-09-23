@@ -1,0 +1,6 @@
+{
+  "name": "Trading Fund ERP",
+  "description": "Enterprise investment & trading management ecosystem featuring desktop admin 1C-style ERP and investor mobile portal with recovery tracking, receipts, and proof-of-receipt workflows.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
